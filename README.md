@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Google Analytics Integration with Next.js (v14.1.2)
 
-## Getting Started
+This repository demonstrates how to integrate Google Analytics into a Next.js (v14.1.2) project. The guide includes steps to set up Google Analytics, obtain a Measurement ID, and track user activity in your application.
 
-First, run the development server:
+## Live Demo
+
+[**Google Analytics Demo Website**](https://google-analytics-arfat.vercel.app/)
+
+## Contact Me
+
+If you have any questions, feel free to [connect with me](https://arfat.app/).
+
+---
+
+## Table of Contents
+
+1. [Features](#features)
+2. [Prerequisites](#prerequisites)
+3. [Setup Instructions](#setup-instructions)
+   - [Step 1: Clone the Repository](#step-1-clone-the-repository)
+   - [Step 2: Install Dependencies](#step-2-install-dependencies)
+   - [Step 3: Configure Environment Variables](#step-3-configure-environment-variables)
+   - [Step 4: Start the Development Server](#step-4-start-the-development-server)
+4. [Verifying the Integration](#verifying-the-integration)
+5. [Deployment](#deployment)
+6. [Additional Resources](#additional-resources)
+
+---
+
+## Features
+
+- Easy integration of Google Analytics with Next.js.
+- Environment-based configuration for the `Measurement ID`.
+- Reusable setup for any Next.js project.
+
+---
+
+## Prerequisites
+
+Before starting, ensure you have the following installed:
+
+- **Node.js** (>=16.8.0)
+- **npm** (>=7.0.0)
+- A Google Analytics account with a `Measurement ID`.
+
+---
+
+## Setup Instructions
+
+### Step 1: Clone the Repository
+
+Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/<your-username>/google-analytics-nextjs.git
+cd google-analytics-nextjs
+```
+
+### Step 2: Install Dependencies
+
+Install the required dependencies by running:
+
+```bash
+npm install
+```
+
+### Step 3: Configure Environment Variables
+
+Create a `.env` file in the root directory of the project and add the following:
+
+```env
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=YOUR_MEASUREMENT_ID
+```
+
+Replace `YOUR_MEASUREMENT_ID` with your Google Analytics `Measurement ID`.
+
+### Step 4: Start the Development Server
+
+Run the following command to start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Verifying the Integration
 
-## Learn More
+To verify the Google Analytics integration:
 
-To learn more about Next.js, take a look at the following resources:
+1. Open your browser's developer tools (Right-click > Inspect > Console).
+2. Enter the following in the console:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```javascript
+   dataLayer;
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   If Google Analytics is integrated correctly, you will see the `dataLayer` object populated with data.
 
-## Deploy on Vercel
+3. Navigate to the **Network** tab in the developer tools.
+4. Refresh the page and search for `gtag.js`, `analytics.js`, or `ga.js` to confirm the script is loaded.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Deployment
+
+To deploy the application, follow these steps:
+
+1. Push your code to a repository (e.g., GitHub).
+2. Deploy the project to a hosting service like [Vercel](https://vercel.com/) or [Netlify](https://www.netlify.com/).
+3. After deployment, verify the Google Analytics setup using the [Real-Time Report](https://support.google.com/analytics/answer/11549684).
+
+---
+
+## Additional Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Google Analytics Setup Guide](https://support.google.com/analytics/answer/9304153?hl=en)
+- [Vercel Deployment Documentation](https://vercel.com/docs)
+
+---
+
+**Author**: [Arfatur Rahman](https://arfat.app/)  
+Feel free to reach out for support or collaboration!
+
+```
+
+```
